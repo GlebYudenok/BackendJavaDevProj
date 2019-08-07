@@ -31,6 +31,12 @@ public class TestApplication {
             System.out.println(s);
         }
 
+
+        /**
+         * Function splits string in array, then insert symbols.
+         * @param fio field, which need to change
+         * @return changed field
+         */
         private String change(String fio){
 
             fio = fio.toLowerCase();
