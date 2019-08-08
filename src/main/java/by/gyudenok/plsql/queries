@@ -4,9 +4,11 @@ SELECT COUNT(users.userid) FROM users
 LEFT JOIN USERSESSIONS ON users.userid = USERSESSIONS.userid
 WHERE USERSESSIONS.userid IS NULL;
 
-//Получить список уникальных UserId активных пользователей,
+//Получить список уникальных UserId активных пользователей
 //которые не пользовались каналом 1
 
+SELECT DISTINCT userid FROM USERSESSIONS WHERE userid NOT IN
+(SELECT userid FROM USERSESSIONS WHERE channeltype = 1);
 
 //Получить максимальное UserId активного пользователя,
 //статус которого также не равен 1.
